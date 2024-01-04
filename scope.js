@@ -123,8 +123,25 @@ document.addEventListener("DOMContentLoaded", function () {
       diem15Phut.reduce((a, b) => a + b, 0) +
       diem1Tiet.reduce((a, b) => a + b * 2, 0) +
       diemHocKy * 3;
+    const ketqua = tongDiem / 10;
 
     // Hiển thị kết quả
-    resultDiv.textContent = `Tổng điểm: ${tongDiem / 10}đ`;
+    resultDiv.textContent = `Tổng điểm: ${ketqua}đ`;
+
+    const xepLoai = document.getElementById("xepLoai");
+
+    if (ketqua < 3.5) {
+      xepLoai.textContent = `Bạn ở mức Kém`;
+    } else if (ketqua >= 3.5 && ketqua < 5.0) {
+      xepLoai.textContent = `Bạn ở mức Yếu`;
+    } else if (ketqua >= 5.0 && ketqua < 6.5) {
+      xepLoai.textContent = `Bạn ở mức Trung Bình`;
+    } else if (ketqua >= 6.5 && ketqua < 8.0) {
+      xepLoai.textContent = `Bạn ở mức Khá`;
+    } else if (ketqua >= 8.0 && ketqua < 9.0) {
+      xepLoai.textContent = `Bạn ở mức Giỏi`;
+    } else if (ketqua >= 9.0) {
+      xepLoai.textContent = `Bạn quá Xuất sắc`;
+    }
   });
 });
